@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qyM-mB-htu">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Scroll View Controller-->
+        <scene sceneID="9eJ-2Q-7iL">
+            <objects>
+                <viewController id="qyM-mB-htu" customClass="ScrollViewController" customModule="CarouselScreen" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SaI-m4-rk1"/>
+                        <viewControllerLayoutGuide type="bottom" id="m4a-oF-DaR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ORt-Ev-4QK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nG-kY-RAU">
+                                <rect key="frame" x="0.0" y="20" width="320" height="350"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="qyM-mB-htu" id="Krw-Kn-JdJ"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="meR-JR-s5z">
+                                <rect key="frame" x="114" y="388" width="93" height="37"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imr-mb-S8V">
+                                <rect key="frame" x="0.0" y="388" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="FAQ">
+                                    <color key="titleColor" red="1" green="0.21960784310000001" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="faqButtonTapped:" destination="qyM-mB-htu" eventType="touchUpInside" id="sAw-l0-S7i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1N-x2-pgs">
+                                <rect key="frame" x="269" y="388" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Skip">
+                                    <color key="titleColor" red="1" green="0.21960784310000001" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipButtonTapped:" destination="qyM-mB-htu" eventType="touchUpInside" id="5DZ-54-0PM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="j1N-x2-pgs" secondAttribute="trailing" constant="-15" id="4J2-j1-LwN"/>
+                            <constraint firstItem="6nG-kY-RAU" firstAttribute="centerX" secondItem="ORt-Ev-4QK" secondAttribute="centerX" id="5br-gN-IsI"/>
+                            <constraint firstItem="meR-JR-s5z" firstAttribute="top" secondItem="6nG-kY-RAU" secondAttribute="bottom" constant="18" id="FGD-pb-bxZ"/>
+                            <constraint firstItem="meR-JR-s5z" firstAttribute="centerX" secondItem="ORt-Ev-4QK" secondAttribute="centerX" id="eUi-eF-1EX"/>
+                            <constraint firstItem="6nG-kY-RAU" firstAttribute="width" secondItem="ORt-Ev-4QK" secondAttribute="width" id="foH-aH-UXg"/>
+                            <constraint firstItem="Imr-mb-S8V" firstAttribute="leading" secondItem="ORt-Ev-4QK" secondAttribute="leadingMargin" constant="-20" id="hcL-jc-hpt"/>
+                            <constraint firstItem="Imr-mb-S8V" firstAttribute="top" secondItem="6nG-kY-RAU" secondAttribute="bottom" constant="18" id="uZE-qH-glk"/>
+                            <constraint firstItem="j1N-x2-pgs" firstAttribute="top" secondItem="6nG-kY-RAU" secondAttribute="bottom" constant="18" id="zKq-nc-Jpg"/>
+                            <constraint firstItem="6nG-kY-RAU" firstAttribute="top" secondItem="SaI-m4-rk1" secondAttribute="bottom" id="zqb-EH-mHh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="meR-JR-s5z" id="ZvS-1R-0IX"/>
+                        <outlet property="scrollView" destination="6nG-kY-RAU" id="z5y-f7-JyN"/>
+                        <outlet property="skipButton" destination="j1N-x2-pgs" id="EaK-4t-dCO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="agf-Pf-grX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="287" y="386"/>
+        </scene>
+    </scenes>
+</document>
